@@ -1,0 +1,149 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="author" content="Jessie Chan"/><meta name="keyword" content="blog"/><meta name="description" content="1. 介绍❓本人因为工作需要，开发时需要使用Linux环境，但是由于本人使用的笔记本，系统用的是Windows，使用双系统的话需要格式化掉我的一个本地硬盘，数据迁移量大。所以想着能不能将Ubuntu安装到移动硬盘中。答案是肯定可以的。这里我就是使用Ubuntu这个发行版了，比较适合入门新手。😁 2. 准备🔨既然是安装到移动硬盘那么移动硬盘就很重要了，最好选择固态硬盘，容量可以选择512G或者1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何将ubuntu安装到移动硬盘？">
+<meta property="og:url" content="https://jessiechan0730.github.io/2025/06/08/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%EF%BC%9F/index.html">
+<meta property="og:site_name" content="Jessie&#39;Blog">
+<meta property="og:description" content="1. 介绍❓本人因为工作需要，开发时需要使用Linux环境，但是由于本人使用的笔记本，系统用的是Windows，使用双系统的话需要格式化掉我的一个本地硬盘，数据迁移量大。所以想着能不能将Ubuntu安装到移动硬盘中。答案是肯定可以的。这里我就是使用Ubuntu这个发行版了，比较适合入门新手。😁 2. 准备🔨既然是安装到移动硬盘那么移动硬盘就很重要了，最好选择固态硬盘，容量可以选择512G或者1">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://jessiechan0730.github.io/image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-1.png">
+<meta property="og:image" content="https://jessiechan0730.github.io/image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-2.png">
+<meta property="og:image" content="https://jessiechan0730.github.io/image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-3.png">
+<meta property="og:image" content="https://jessiechan0730.github.io/image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-4.png">
+<meta property="og:image" content="https://jessiechan0730.github.io/image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-5.png">
+<meta property="og:image" content="https://jessiechan0730.github.io/image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-6.png">
+<meta property="og:image" content="https://jessiechan0730.github.io/image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-7.png">
+<meta property="og:image" content="https://jessiechan0730.github.io/image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-8.png">
+<meta property="og:image" content="https://jessiechan0730.github.io/image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-9.png">
+<meta property="og:image" content="https://jessiechan0730.github.io/image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-10.png">
+<meta property="og:image" content="https://jessiechan0730.github.io/image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-11.png">
+<meta property="og:image" content="https://jessiechan0730.github.io/image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-12.png">
+<meta property="og:image" content="https://jessiechan0730.github.io/image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-13.png">
+<meta property="og:image" content="https://jessiechan0730.github.io/image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-14.png">
+<meta property="og:image" content="https://jessiechan0730.github.io/image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-15.png">
+<meta property="og:image" content="https://jessiechan0730.github.io/image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-16.png">
+<meta property="og:image" content="https://jessiechan0730.github.io/image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-17.png">
+<meta property="og:image" content="https://jessiechan0730.github.io/image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-18.png">
+<meta property="og:image" content="https://jessiechan0730.github.io/image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-19.png">
+<meta property="og:image" content="https://jessiechan0730.github.io/image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-20.png">
+<meta property="og:image" content="https://jessiechan0730.github.io/image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/UEFI.jpg">
+<meta property="og:image" content="https://jessiechan0730.github.io/image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/success.jpg">
+<meta property="article:published_time" content="2025-06-08T07:56:33.000Z">
+<meta property="article:modified_time" content="2025-06-08T10:17:53.456Z">
+<meta property="article:author" content="Jessie Chan">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Ubuntu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jessiechan0730.github.io/image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-1.png"><title>如何将ubuntu安装到移动硬盘？ - JESSIE`BLOG - 一个普通人的博客小站</title><link rel="shortcut icon" href="/img/site-icon.png">
+<link rel="stylesheet" href="/css/style.css" id="dm-light">
+
+
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+<meta name="generator" content="Hexo 7.3.0"></head><body><header><div class="top-nav" ondblclick="scrollToTop()"><div class="nav-info"><div class="nav-icon"><img id="nav-icon" src="/img/site-icon.png"/></div><div class="nav-title"><a id="nav-title" href="/" title="主页">Jessie'Blog</a></div></div><div class="nav-ribbon"><div class="top-menu-expanded"><a class="top-menu-item" href="/archives"><span>归档</span></a><a class="top-menu-item" href="/categories"><span>分类</span></a><a class="top-menu-item" href="/tags"><span>标签</span></a><a class="top-menu-item" href="/about"><span>关于</span></a></div><div class="top-search" onclick="toggleSearchWindow()"><div id="top-search-btn" title="搜索"><i class="icon fa-solid fa-magnifying-glass"></i><span>搜索</span></div></div><div id="top-menu-btn" onclick="openTopMenu()" title="打开菜单"><i class="fa-solid fa-bars fa-lg"></i></div></div></div></header><div id="top-menu-hidden"><div class="menu-hidden-content"><div class="menu-hidden-nav"><a class="menu-hidden-item" href="/archives"><i class="fa-solid fa-box-archive fa-sm"></i><span>归档</span></a><a class="menu-hidden-item" href="/categories"><i class="fa-regular fa-folder-open fa-sm"></i><span>分类</span></a><a class="menu-hidden-item" href="/tags"><i class="fa-solid fa-tags fa-sm"></i><span>标签</span></a><a class="menu-hidden-item" href="/about"><i class="fa-solid fa-paw fa-sm"></i><span>关于</span></a></div></div><div class="menu-hidden-blank" onclick="closeTopMenu()"></div></div>
+<div class="blog-info"><div class="blog-pic"><img id="blog-pic" src="/img/site-icon.png"/></div><div class="blog-title"><i class="fa-solid fa-paw fa-2xs fa-rotate-by"></i><span>JESSIE`BLOG</span><i class="fa-solid fa-paw fa-2xs fa-rotate-by"></i></div><div class="blog-desc">本站用于发布技术文章、摄影分享以及日常生活等。</div></div><div class="main"><div class="main-content"><article class="post"><div class="post-title"><h1><i class="fa-solid fa-paw"></i>如何将ubuntu安装到移动硬盘？</h1></div><div class="post-info"><div class="post-info-first-line"><div class="post-date"><i class="icon fa-regular fa-calendar-plus" title="发布日期"></i><time class="publish-time">2025-06-08</time><i class="icon fa-regular fa-calendar-check" title="更新日期"></i><time class="update-time">2025-06-08</time></div>
+<div class="post-categories"><i class="icon fa-regular fa-folder-open" title="分类"></i><a class="post-category" href="/categories/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/">个人笔记</a></div>
+<div class="post-tags"><i class="icon fa-solid fa-tags" title="标签"></i><a class="post-tag" href="/tags/Linux/">Linux</a><i class="icon fa-solid fa-tags" title="标签"></i><a class="post-tag" href="/tags/Ubuntu/">Ubuntu</a></div></div><div class="post-info-second-line"><div class="post-copyright"><i class="icon fa-brands fa-creative-commons" title="版权声明"></i><span>版权声明: </span><a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans" title="CC BY-NC-ND 4.0">署名-非商业性使用-禁止演绎 4.0</a></div>
+<div class="post-word-count"><i class="icon fa-solid fa-pen-to-square"></i><span>全文约1.9K字</span></div><div class="pageview-post"><i class="icon fa-regular fa-eye"></i><span id="busuanzi_container_page_pv">阅读次数: <span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner"></i></span></span></div></div></div><div class="post-content"><h2 id="1-介绍❓"><a href="#1-介绍❓" class="headerlink" title="1. 介绍❓"></a>1. 介绍❓</h2><p>本人因为工作需要，开发时需要使用Linux环境，但是由于本人使用的笔记本，系统用的是Windows，使用双系统的话需要格式化掉我的一个本地硬盘，数据迁移量大。所以想着能不能将Ubuntu安装到移动硬盘中。答案是肯定可以的。这里我就是使用Ubuntu这个发行版了，比较适合入门新手。😁</p>
+<h2 id="2-准备🔨"><a href="#2-准备🔨" class="headerlink" title="2. 准备🔨"></a>2. 准备🔨</h2><p>既然是安装到移动硬盘那么移动硬盘就很重要了，最好选择固态硬盘，容量可以选择512G或者1T够用即可。读写速度可以根据你电脑的接口速度来确定，例如我的电脑：</p>
+<table>
+<thead>
+<tr>
+<th align="left">接口位置</th>
+<th align="left">类型</th>
+<th align="left">协议版本</th>
+<th align="left">功能说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>左侧</strong></td>
+<td align="left">USB 3.2 Gen1 Type-A</td>
+<td align="left">5Gbps</td>
+<td align="left">连接键鼠&#x2F;U盘</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">USB 3.2 Gen2 Type-C</td>
+<td align="left">10Gbps</td>
+<td align="left">支持DP 1.4输出 + 100W PD充电</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">USB 3.2 Gen2 Type-C</td>
+<td align="left">10Gbps (USB 4.0)*</td>
+<td align="left">集显输出&#x2F;高速数据传输</td>
+</tr>
+<tr>
+<td align="left"><strong>右侧</strong></td>
+<td align="left">USB 3.2 Gen1 Type-A</td>
+<td align="left">5Gbps</td>
+<td align="left">外接设备扩展</td>
+</tr>
+</tbody></table>
+<p>按照理论速度10Gbps的速度可以达到 <strong>1,250 MB&#x2F;s</strong>，故我选择了<strong>1050MB&#x2F;s</strong>读写速度的硬盘。那么大致需要准备的东西如下：</p>
+<ol>
+<li>联想拯救者移动硬盘（大小512G、1050Mb&#x2F;s的读写速度）</li>
+<li>ios镜像文件（ubuntu-24.04.1-desktop-amd64.iso）</li>
+<li>VMware Workstation Pro（不想使用U盘制作启动盘，使用虚拟机更加方便）</li>
+<li>DiskGenius（硬盘分区管理软件）</li>
+</ol>
+<h2 id="3-开始安装🚀"><a href="#3-开始安装🚀" class="headerlink" title="3. 开始安装🚀"></a>3. 开始安装🚀</h2><h3 id="1-首先安装DiskGenius和VM虚拟机，下载链接如下："><a href="#1-首先安装DiskGenius和VM虚拟机，下载链接如下：" class="headerlink" title="1. 首先安装DiskGenius和VM虚拟机，下载链接如下："></a>1. 首先安装<strong>DiskGenius</strong>和VM虚拟机，下载链接如下：</h3><p><a target="_blank" rel="noopener" href="https://www.diskgenius.cn/download.php">https://www.diskgenius.cn/download.php</a><br><a target="_blank" rel="noopener" href="https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion">https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion</a></p>
+<h3 id="2-使用DiskGenius"><a href="#2-使用DiskGenius" class="headerlink" title="2. 使用DiskGenius"></a>2. 使用DiskGenius</h3><p>双击打开软件，点击将要用到的硬盘，然后可以看到右侧的磁盘分区情况。右键硬盘名称，点击“转换分区表类型为GUID格式”，如果已经是灰色那么略过这步：<br><img src="/../image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-1.png" alt="转换分区表类型为GUID格式">  </p>
+<h3 id="3-开始分区"><a href="#3-开始分区" class="headerlink" title="3. 开始分区"></a>3. 开始分区</h3><p>我们右键顶层空闲分区，如果是蓝色的NTFS，在备份了重要数据的前提下，则需要清空分区或者格式化后，点击新建分区：<br><img src="/../image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-2.png" alt="新建分区">  </p>
+<ol>
+<li>efi分区：主磁盘分区，文件系统类型为FAT32，分区大小1GB（推荐设置），卷标efi，用于存放Ubuntu系统的启动引导，特别重要<br><img src="/../image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-3.png" alt="引导分区">  </li>
+<li>swap区：主磁盘分区，文件系统类型Linux swap partition，分区大小32GB(类似于Window的虚拟内存，一般和自己电脑内存差不多大小即可)<br><img src="/../image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-4.png" alt="交换分区">  </li>
+<li>&#x2F;区：主磁盘分区，文件系统类型Ext4（Linux Data），分区大小自设，相当于Windows中的C盘（我这里设置138G），卷标 &#x2F;<br><img src="/../image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-5.png" alt="根分区">  </li>
+<li>&#x2F;home区：主磁盘分区，文件系统类型Ext4（Linux Data），分区大小自动设置剩余大小，卷标 &#x2F;home（我这里设置为305GB）<br><img src="/../image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-6.png" alt="home分区">  </li>
+<li>分好之后我们点击左上角的保存更改，确定即可，最终分区如下：<br><img src="/../image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-7.png" alt="保存分区"></li>
+</ol>
+<h3 id="4-设置虚拟机"><a href="#4-设置虚拟机" class="headerlink" title="4. 设置虚拟机"></a>4. 设置虚拟机</h3><p>双击启动虚拟机软件之后，我们点击新建虚拟机，这一步我们选择稍后安装操作系统：<br><img src="/../image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-8.png" alt="新建虚拟机"><br><img src="/../image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-9.png" alt="新建虚拟机"><br>处理器数量我选择2、内核数量我选择2、内存大小选择8G、网络使用NAT、SCSI控制器选择 LSI Logic、磁盘类型选择SCSI、创建新的磁盘，大小20GB左右即可。在自定义硬件中我们需要将下载好的iso镜像导入：<br><img src="/../image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-10.png" alt="设置虚拟机"><br>选择自定义硬件，选择新的CD&#x2F;DVD -&gt;  右侧选择使用iso映像文件 -&gt; 点击浏览按钮选择你刚刚下载好的iso镜像文件：<br><img src="/../image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-11.png" alt="选择iso镜像"><br>接下来需要查看自己的主板是否是UEFI：Windows使用 win + r，输入 msinfo32 后回车，如果启动模式是 UEFI：<br><img src="/../image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-12.png" alt="查看启动模式"><br>那么在虚拟机中我们需要，右键虚拟机选择设置 -&gt; 进入选项 tab 栏目 -&gt; 点击高级 -&gt; 更改固件类型为 UEFI：<br><img src="/../image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-13.png" alt="更改固件类型"><br><strong>这一步很重要，它决定了你等下在虚拟机中安装，能否创建 efi 分区以及在进入bios界面后能否看到用移动硬盘作为启动盘。</strong></p>
+<h3 id="5-启动虚拟机"><a href="#5-启动虚拟机" class="headerlink" title="5. 启动虚拟机"></a>5. 启动虚拟机</h3><p>进入系统选择 Try or install Ubuntu：<br><img src="/../image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-14.png" alt="启动虚拟机"><br>为了让硬盘连接到虚拟机中，我们需要选择工具栏虚拟机选项 -&gt; 可移动设备 -&gt; 找到自己的移动硬盘 -&gt; 选择断开与主机的连接：<br><img src="/../image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-15.png" alt="硬盘连接虚拟机"><br>进入系统后，我们选择 Try Ubuntu 随后点击关闭按钮：<br><img src="/../image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-16.png" alt="Try Ubuntu">  </p>
+<p>随后我们可以通过Ubuntu自带的磁盘查看工具查看我们移动硬盘分区是否正确。<br><img src="/../image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-17.png" alt="查看分区"><br>无误之后即可点击图标进行安装了：<br><img src="/../image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-18.png" alt="开始安装"><br>安装的过程就比较简单了，我这里就不放太多图，口头描述了：<br>语言选择 中文 -&gt; 键盘布局选择汉语 -&gt;  连接到互联网选择有线连接 -&gt; 安装现在选择<strong>交互安装</strong> -&gt; 应用选择<strong>默认集合</strong>即可 -&gt; 安装<strong>专有软件</strong>可以都勾选上 -&gt;  分区选择手动分区:<br><img src="/../image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-19.png" alt="选择移动硬盘"><br><strong>！！注意这里左下角的用于安装引导程序的设备切记选择我们的移动硬盘，也就是是上面我们分好区的硬盘</strong><br><img src="/../image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/image-20.png" alt="选择移动硬盘"><br>我这里是sdb，由于我们已经提前分好区了可以点击下一步即可，如果下一步按钮为灰色，那么在列表中选择你的移动硬盘，选择左下角的新建分区表即可,此时可以重新进行分区，<strong>记住一定要有 &#x2F;boot&#x2F;efi 分区，否则等下进入bios是看不到启动项的</strong>，文件类型为 VFAT 即可大小可以为 1GB。<br>分区完成后下一步输入你的用户名和密码 -&gt;  后面即可开始安装。如果安装失败有可能是网络原因造成的，可以选择重启虚拟机，然后重新开始安装。<br>安装成功后关闭虚拟机，重新我们的电脑，当电脑进入加载界面时候，可以狂按f2(我的电脑是f2有的是shift，根据自己电脑的型号进行操作)，如果此时发现启动项目中有你的移动硬盘，那么恭喜你安装成功了，现在只需要将移动硬盘作为第一个启动项即可。<br><img src="/../image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/UEFI.jpg" alt="UEFI"><br>选择保存，随后启动，安装成功！！！<br><img src="/../image/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E5%AE%89%E8%A3%85%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/success.jpg" alt="安装成功">  </p>
+<h2 id="4-总结😁"><a href="#4-总结😁" class="headerlink" title="4. 总结😁"></a>4. 总结😁</h2><p>本教程介绍了如何将Ubuntu安装到移动硬盘，相比于直接安装双系统来讲，移动硬盘安装的优点是方便携带，不会影响主机的操作系统和数据。缺点的话就是速度会比较慢，有时候会有点卡。上述教程中需要注意的就是UEFI，一定要有 &#x2F;boot&#x2F;efi 分区，bios才会识别移动硬盘为一个启动项，其余过程还是比较简单的。</p>
+<h2 id="5-参考📖"><a href="#5-参考📖" class="headerlink" title="5. 参考📖"></a>5. 参考📖</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_52034548/article/details/131581118">https://blog.csdn.net/qq_52034548/article/details/131581118</a><br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1tb4y1u77k/?spm_id_from=333.337.search-card.all.click&vd_source=80c48eb8096923ff73f7da8cccd53074">https://www.bilibili.com/video/BV1tb4y1u77k/?spm_id_from=333.337.search-card.all.click&amp;vd_source=80c48eb8096923ff73f7da8cccd53074</a><br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1mh4y1a76v/?spm_id_from=333.337.search-card.all.click&vd_source=80c48eb8096923ff73f7da8cccd53074">https://www.bilibili.com/video/BV1mh4y1a76v/?spm_id_from=333.337.search-card.all.click&amp;vd_source=80c48eb8096923ff73f7da8cccd53074</a></p>
+</div><div class="post-end"><div class="post-prev"></div><div class="post-reward" onclick="openPostReward()" title="赞赏"><i class="fa-regular fa-thumbs-up fa-xl fa-beat-fade"></i></div><div id="reward-panel" onclick="closePostReward()"><div class="reward-container"><p>如果您喜欢这篇文章，欢迎赞赏支持作者，谢谢&#128151;</p>
+<div class="reward-nav"><div class="reward-item"><img class="reward-img" src="/img/reward/wechat.jpg" title="Wechat" alt="Wechat"/><span>Wechat</span></div><div class="reward-item"><img class="reward-img" src="/img/reward/alipay.jpg" title="Alipay" alt="Alipay"/><span>Alipay</span></div></div></div></div><div class="post-next"><a href="/2025/05/31/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" title="下一篇文章"><i class="fa-solid fa-chevron-right fa-lg"></i></a></div></div></article><div class="comment" id="comment"><script src="https://giscus.app/client.js" data-repo="JessieChan0730/hexo-blog-guscus" data-repo-id="R_kgDOO3kdLQ" data-category="Announcements" data-category-id="DIC_kwDOO3kdLc4CrJnQ" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="light" data-lang="zh-CN" crossorigin="anonymous" async="async"></script></div><div id="post-toc"><aside class="toc-aside"><div class="toc-title"><span><i class="fa-solid fa-paw"></i>目录</span></div><div class="toc-container" id="toc-body"><ol class="toc-content"><li class="toc-content-item toc-content-level-2"><a class="toc-content-link" href="#1-%E4%BB%8B%E7%BB%8D%E2%9D%93"><span class="toc-content-number">1.</span> <span class="toc-content-text">1. 介绍❓</span></a></li><li class="toc-content-item toc-content-level-2"><a class="toc-content-link" href="#2-%E5%87%86%E5%A4%87%F0%9F%94%A8"><span class="toc-content-number">2.</span> <span class="toc-content-text">2. 准备🔨</span></a></li><li class="toc-content-item toc-content-level-2"><a class="toc-content-link" href="#3-%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85%F0%9F%9A%80"><span class="toc-content-number">3.</span> <span class="toc-content-text">3. 开始安装🚀</span></a><ol class="toc-content-child"><li class="toc-content-item toc-content-level-3"><a class="toc-content-link" href="#1-%E9%A6%96%E5%85%88%E5%AE%89%E8%A3%85DiskGenius%E5%92%8CVM%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%8C%E4%B8%8B%E8%BD%BD%E9%93%BE%E6%8E%A5%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="toc-content-number">3.1.</span> <span class="toc-content-text">1. 首先安装DiskGenius和VM虚拟机，下载链接如下：</span></a></li><li class="toc-content-item toc-content-level-3"><a class="toc-content-link" href="#2-%E4%BD%BF%E7%94%A8DiskGenius"><span class="toc-content-number">3.2.</span> <span class="toc-content-text">2. 使用DiskGenius</span></a></li><li class="toc-content-item toc-content-level-3"><a class="toc-content-link" href="#3-%E5%BC%80%E5%A7%8B%E5%88%86%E5%8C%BA"><span class="toc-content-number">3.3.</span> <span class="toc-content-text">3. 开始分区</span></a></li><li class="toc-content-item toc-content-level-3"><a class="toc-content-link" href="#4-%E8%AE%BE%E7%BD%AE%E8%99%9A%E6%8B%9F%E6%9C%BA"><span class="toc-content-number">3.4.</span> <span class="toc-content-text">4. 设置虚拟机</span></a></li><li class="toc-content-item toc-content-level-3"><a class="toc-content-link" href="#5-%E5%90%AF%E5%8A%A8%E8%99%9A%E6%8B%9F%E6%9C%BA"><span class="toc-content-number">3.5.</span> <span class="toc-content-text">5. 启动虚拟机</span></a></li></ol></li><li class="toc-content-item toc-content-level-2"><a class="toc-content-link" href="#4-%E6%80%BB%E7%BB%93%F0%9F%98%81"><span class="toc-content-number">4.</span> <span class="toc-content-text">4. 总结😁</span></a></li><li class="toc-content-item toc-content-level-2"><a class="toc-content-link" href="#5-%E5%8F%82%E8%80%83%F0%9F%93%96"><span class="toc-content-number">5.</span> <span class="toc-content-text">5. 参考📖</span></a></li></ol></div></aside><div class="toc-blank" onclick="tocToggle()"></div></div></div></div><div id="tool-bar"><div id="tool-bar-main"><div id="tool-toggle" onclick="toolToggle()" title="设置"><i class="fa-solid fa-gear"></i></div><div id="toc-toggle" onclick="tocToggle()" title="目录"><i class="fa-solid fa-list-ul"></i></div><div id="go-to-comment" onclick="gotoComment()" title="评论"><i class="fa-regular fa-message fa-flip-horizontal"></i></div><div id="back-to-top" onclick="scrollToTop()" title="返回顶部"><i class="fa-solid fa-chevron-up"></i></div></div><div id="tool-bar-more" style="display: none;"><div id="darkmode-switch" onclick="darkmodeSwitch()" title="深色模式"><i class="fa-solid fa-circle-half-stroke"></i></div><div id="font-size-increase" onclick="fontSizeIncrease()" title="放大字体"><i class="fa-solid fa-plus"></i></div><div id="font-size-decrease" onclick="fontSizeDecrease()" title="缩小字体"><i class="fa-solid fa-minus"></i></div></div></div><div id="search-panel"><div class="search-container"><div class="search-head"><div class="search-title"><span><i class="fa-solid fa-paw"></i>搜索</span></div><div class="search-close-btn" onclick="toggleSearchWindow()"><i class="fa-regular fa-circle-xmark"></i></div></div><div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input id="search-input" type="text" placeholder="请输入需要搜索的内容……" value=""/></div><div class="search-body"><div id="search-count">匹配结果数: </div><div id="search-result"></div><div id="search-result-empty">未搜索到匹配的文章。</div></div></div></div><footer><div class="footer-content"><div class="copyright-info"><i class="fa-regular fa-copyright fa-xs"></i><span>2024 - 2025 </span><a href="/about">Jessie Chan</a><i class="fa-solid fa-cat fa-sm"></i><span>Powered by </span><a href="https://hexo.io/" target="_blank">Hexo</a><span> &amp; </span><a href="https://github.com/chanwj/hexo-theme-meow" target="_blank" title="v2.1.5">Theme Meow</a></div><div class="pageview-site"><span id="busuanzi_container_site_pv">总访问量 : <span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner"></i></span></span><span id="busuanzi_container_site_uv">总访客数 : <span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner"></i></span></span></div></div></footer>
+<script>const GLOBAL_CONFIG = {
+  comment: { theme: 'light'}
+}
+</script>
+<script src="/js/third-party/darkmode.js"></script>
+<script>var options = {
+  dark: '/css/darkmode.css',
+  startAt: '24:00',
+  endAt: '06:00',
+  checkSystemScheme: 'false',
+  saveOnToggle: 'true'
+};
+var darkMode = new DarkMode(options);
+// change comment theme synchronously 同步修改评论区主题
+if (darkMode.getMode() == "dark" && (true || true)) {
+  if (document.getElementById('comment')) {
+    document.getElementById('comment').getElementsByTagName('script')[0].setAttribute('data-theme', 'noborder_dark');
+  }
+}
+</script><script>if (localStorage.getItem('font-size')) {
+  document.querySelector('.post-content').style.fontSize = localStorage.getItem('font-size') + 'px';
+}
+</script>
+<script src="/js/theme/tool-bar.js"></script>
+
+
+<script src="/js/theme/menu.js"></script>
+
+
+<script src="/js/third-party/clipboard.min.js"></script>
+
+
+<script src="/js/theme/copy.js"></script>
+<script>copyCode();
+</script>
+<script src="/js/theme/reward.js"></script>
+
+<script src="/js/jquery-3.7.1.min.js"></script>
+
+
+<script src="/js/theme/search.js"></script>
+<script>searchFunc('/search.xml', 'search-input', 'search-result');
+</script></body></html>
